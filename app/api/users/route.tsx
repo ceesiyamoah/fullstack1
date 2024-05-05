@@ -9,7 +9,6 @@ export function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
 	const body = await request.json();
-	console.log(body);
-
+	// const validation
 	return NextResponse.json(body);
 }
