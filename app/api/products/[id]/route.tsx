@@ -19,7 +19,7 @@ export async function GET(req: NextRequest, { params: { id } }: Props) {
 }
 
 export async function PATCH(req: NextRequest, { params: { id } }: Props) {
-	const body = req.json();
+	const body = await req.json();
 	const { success, error, data } = schema.safeParse(body);
 	if (!success) {
 		return NextResponse.json({ error: error.errors }, { status: 400 });
@@ -42,7 +42,7 @@ export async function PATCH(req: NextRequest, { params: { id } }: Props) {
 }
 
 export async function DELETE(req: NextRequest, { params: { id } }: Props) {
-	const body = req.json();
+	const body = await req.json();
 	const { success, error, data } = schema.safeParse(body);
 	if (!success) {
 		return NextResponse.json({ error: error.errors }, { status: 400 });
