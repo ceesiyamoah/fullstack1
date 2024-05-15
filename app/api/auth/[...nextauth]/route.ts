@@ -24,6 +24,7 @@ export const authOptions: AuthOptions = {
 					placeholder: 'example@gmail.com',
 				},
 				password: { label: 'Password', type: 'password', placeholder: 'password' },
+				name: { label: 'Nme' },
 			},
 			async authorize(credentials, req) {
 				if (!credentials?.email || !credentials?.password) return null;
